@@ -2,12 +2,13 @@ import React from 'react';
 
 const NavBar = () => {
     return (
-        <div>
-            <ul>
+        <div className='flex justify-between p-4'>
+            
                 <li>Home</li>
                 <li>About</li>
                 <li>Contact</li>
-            </ul>
+                <li>Services</li>
+                <li>Blog</li>
         </div>
     );
 };
