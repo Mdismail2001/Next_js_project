@@ -1,14 +1,15 @@
+import Link from 'next/link';
 import React from 'react';
 
 const NavBar = () => {
     return (
-        <div className='flex justify-between p-4'>
+        <div className='flex justify-around p-4'>
             
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
-                <li>Services</li>
-                <li>Blog</li>
+                <Link href="/">Home</Link>
+                <Link href="/about">About</Link>
+                <Link href="/contact">Contact</Link>
+                <Link href="/services">Services</Link>
+               <Link href="/blog">Blog</Link> 
         </div>
     );
 };
