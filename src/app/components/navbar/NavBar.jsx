@@ -1,7 +1,13 @@
+
+"use client";
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 
 const NavBar = () => {
+    const pathname = usePathname();
+    console.log("Current Pathname:", pathname.includes("dashboard")); // Debugging line to check the current pathname
+    if (!pathname.includes("dashboard")) {
     return (
         <div className='flex justify-around p-4'>
             
@@ -12,6 +18,10 @@ const NavBar = () => {
                <Link href="/blog">Blog</Link> 
         </div>
     );
+    } else {
+        return
+        <></>
+    }
 };
 
 export default NavBar;
