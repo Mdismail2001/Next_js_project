@@ -15,7 +15,7 @@ const NavBar = () => {
                 <Link href="/about">About</Link>
                 <Link href="/contact">Contact</Link>
                 <Link href="/services">Services</Link>
-               <Link href="/blog">Blog</Link> 
+               <Link href="/posts">Posts</Link> 
         </div>
     );
     } else {
