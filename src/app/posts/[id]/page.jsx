@@ -1,22 +1,31 @@
 import React from "react";
 
-const getSinglePost = async (id) => {
+// Function to fetch a single post
+async function getSinglePost(id) {
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+  if (!res.ok) throw new Error("Failed to fetch post");
   return res.json();
-};
+}
 
-const Page = async ({ params }) => {
-  const { id } = params;
+// Generate dynamic metadata for SEO
+export async function generateMetadata({ params }) {
+  const post = await getSinglePost(params.id);
+  return {
+    title: `Post #${params.id} Page`,
+    description: post.body.slice(0, 100) + "...",
+  };
+}
 
-  const post = await getSinglePost(id);
-    // console.log(post);
+// Page component
+export default async function Page({ params }) {
+  const post = await getSinglePost(params.id);
 
   return (
-    <div>
-      <h1 className="text-xl font-bold mb-2 text-center">Post #{id}</h1>
-      <p className="text-center">{post.body}</p>
+    <div className="max-w-2xl mx-auto p-6">
+      <h1 className="text-2xl font-bold mb-3 text-center">
+        Post #{params.id}
+      </h1>
+      <p className="text-center text-gray-700">{post.body}</p>
     </div>
   );
-};
-
-export default Page;
+}
