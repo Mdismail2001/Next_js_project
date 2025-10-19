@@ -6,3 +6,15 @@ export async function GET() {
     }
   return Response.json({ data })
 }
+
+
+export async function POST(request) {
+    const reqBody = await request.json();
+    const data = {
+        message : "Item created successfully",
+        error : false,
+        status : 201,
+        item : reqBody
+    }
+  return Response.json({ data })
+}
