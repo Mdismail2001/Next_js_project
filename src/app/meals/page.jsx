@@ -1,5 +1,10 @@
 import MealSearch from "./components/MealSearch";
 
+export const metadata = {
+  title: "Meals Page",
+  description: "Find meals by name",
+};
+
 async function getMeals(search) {
   const res = await fetch(
     `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`,

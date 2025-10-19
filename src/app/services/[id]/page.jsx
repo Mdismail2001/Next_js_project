@@ -1,5 +1,10 @@
 import React from 'react';
 
+export const metadata = {
+        title: "Single Service Page",
+        description: "This is service page"
+    };  
+
 const page = ({params}) => {
          const servicesData = [
   {

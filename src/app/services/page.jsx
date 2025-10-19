@@ -1,6 +1,12 @@
 import Link from 'next/link';
 import React from 'react';
 
+
+export const metadata = {
+        title: "Service Page",
+        description: "This is service page"
+    };
+    
 const ServicePage = () => {
      const servicesData = [
   {
